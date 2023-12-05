@@ -1,0 +1,38 @@
+-- Customer table
+CREATE TABLE Customer (
+    UserID INT PRIMARY KEY,
+    Username VARCHAR(255) NOT NULL,
+    Password VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL
+    -- Add other attributes as needed
+);
+
+-- Menu_Item table
+CREATE TABLE Menu_Item (
+    ItemID INT PRIMARY KEY,
+    Name VARCHAR(255) NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL,
+    Description VARCHAR(255) NOT NULL
+    -- Add other attributes as needed
+);
+
+-- Order table
+CREATE TABLE Order (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE,
+    Status VARCHAR(20) NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customer(UserID)
+    -- Add other attributes as needed
+);
+
+-- Order_Item table (for handling the Many-to-Many relationship)
+CREATE TABLE Order_Item (
+    OrderID INT,
+    ItemID INT,
+    Quantity INT,
+    PRIMARY KEY (OrderID, ItemID),
+    FOREIGN KEY (OrderID) REFERENCES Order(OrderID),
+    FOREIGN KEY (ItemID) REFERENCES Menu_Item(ItemID)
+    -- Add other attributes as needed
+);
