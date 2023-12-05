@@ -1,0 +1,4 @@
+SELECT *
+FROM Menu_Item
+ORDER BY ItemID DESC
+LIMIT 20;
