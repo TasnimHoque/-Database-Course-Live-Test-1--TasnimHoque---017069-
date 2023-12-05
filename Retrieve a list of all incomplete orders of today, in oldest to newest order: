@@ -1,0 +1,4 @@
+SELECT *
+FROM Order
+WHERE Status != 'completed' AND OrderDate = CURDATE()
+ORDER BY OrderDate ASC;
