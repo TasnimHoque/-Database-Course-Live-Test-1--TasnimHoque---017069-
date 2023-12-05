@@ -1,0 +1,2 @@
+DELETE FROM Order
+WHERE Status = 'completed' AND OrderDate < DATE_SUB(CURDATE(), INTERVAL 15 DAY);
