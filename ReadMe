@@ -1,0 +1,4 @@
+Assumptions:
+The Status attribute in the Order table could have values like 'new', 'in-progress', and 'completed'.
+The OrderDate attribute in the Order table stores the date the order was placed.
+Additional attributes can be added based on specific requirements or assumptions about the cloud kitchen's operations.
